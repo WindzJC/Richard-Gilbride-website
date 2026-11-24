@@ -1,14 +1,12 @@
 /* Reveal native playback only after explicit viewer activation. */
 (function () {
   const button = document.querySelector('.film-play');
-  const player = document.querySelector('.film-screen video');
+  const player = document.getElementById('film-player')?.content.querySelector('video');
   if (!button || !player) return;
-  player.hidden = true;
-  button.hidden = false;
   button.addEventListener('click', function () {
-    button.hidden = true;
-    player.hidden = false;
-    player.focus();
+    button.replaceWith(player);
+    player.focus({ preventScroll: true });
     player.play().catch(function () { /* Native controls remain available. */ });
   }, { once: true });
+  button.disabled = false;
 })();

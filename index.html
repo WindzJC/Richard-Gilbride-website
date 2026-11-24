@@ -20,7 +20,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/ibm-plex-sans-condensed-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=native-film-2">
 <script>document.documentElement.classList.replace('no-js','js');</script>
 </head>
 <body>
@@ -269,14 +269,17 @@
           <p class="film-description">From a newspaper he kept as a schoolboy to decades of curiosity and research, discover the story behind Richard Gilbride's three books.</p>
         </header>
         <div class="film-screen">
-          <button class="film-play" type="button" hidden aria-label="Watch The Paper He Kept">
+          <button class="film-play" type="button" aria-label="Watch The Paper He Kept" disabled>
             <img src="assets/film/the-paper-he-kept-matrix.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Matrix for Assassination on an archive desk.">
             <span class="film-play-label">Watch the film</span>
           </button>
-          <video controls playsinline preload="none" poster="assets/film/the-paper-he-kept-matrix.webp" width="1280" height="720" aria-label="The Paper He Kept ? Richard Gilbride author film">
-            <source src="assets/film/the-paper-he-kept.mp4" type="video/mp4">
-            Your browser does not support embedded video.
-          </video>
+          <template id="film-player">
+            <video controls playsinline preload="none" poster="assets/film/the-paper-he-kept-matrix.webp" width="1280" height="720" aria-label="The Paper He Kept — Richard Gilbride author film">
+              <source src="assets/film/the-paper-he-kept.mp4" type="video/mp4">
+              <a href="assets/film/the-paper-he-kept.mp4">Watch the film</a>
+            </video>
+          </template>
+          <noscript><a class="text-link" href="assets/film/the-paper-he-kept.mp4">Watch the film</a></noscript>
         </div>
       </div>
     </div>
@@ -307,6 +310,6 @@
   </div>
 </footer>
 <script src="assets/js/night.js" defer></script>
-<script src="assets/js/film.js" defer></script>
+<script src="assets/js/film.js?v=native-film-2" defer></script>
 </body>
 </html>
