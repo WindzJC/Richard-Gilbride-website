@@ -35,6 +35,7 @@
         <li><a href="#then-later">Then and later</a></li>
         <li><a href="#book">The book</a></li>
         <li><a href="#author">The author</a></li>
+        <li><a href="#film">Author film</a></li>
         <li><a href="#find">Find the book</a></li>
       </ul>
     </nav>
@@ -257,6 +258,27 @@
     </div>
   </section>
 
+  <section class="film" id="film" aria-labelledby="film-title">
+    <div class="wrap">
+      <div class="film-screening">
+        <header class="film-intro">
+          <div>
+            <p class="eyebrow">The man behind the books</p>
+            <h2 id="film-title">The Paper He Kept</h2>
+          </div>
+          <p class="film-description">From a newspaper he kept as a schoolboy to decades of curiosity and research, discover the story behind Richard Gilbride's three books.</p>
+        </header>
+        <div class="film-screen">
+          <button class="film-play" type="button" disabled aria-label="Watch The Paper He Kept">
+            <img src="assets/film/the-paper-he-kept-matrix.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Matrix for Assassination on a stack of manila folders, lit on a dark archive desk.">
+            <span class="film-play-label">Watch the film</span>
+          </button>
+        </div>
+        <noscript><p>Enable JavaScript to watch the film here.</p></noscript>
+      </div>
+    </div>
+  </section>
+
   <section class="find" id="find" aria-labelledby="find-title">
     <div class="wrap find-grid">
       <img class="find-cover" src="assets/covers/the-secret-murder-of-brian-jones-480.jpg" width="480" height="719" loading="lazy" alt="Cover of The Secret Murder of Brian Jones.">
@@ -282,5 +304,6 @@
   </div>
 </footer>
 <script src="assets/js/night.js" defer></script>
+<script src="assets/js/film.js" defer></script>
 </body>
 </html>
