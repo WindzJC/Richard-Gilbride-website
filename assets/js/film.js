@@ -1,19 +1,14 @@
-/* Keep the YouTube player dormant until the reader opens it. */
+/* Reveal native playback only after explicit viewer activation. */
 (function () {
   const button = document.querySelector('.film-play');
-  if (!button || !/^https?:$/.test(window.location.protocol)) return;
-  const screen = document.querySelector('.film-screen');
-
+  const player = document.querySelector('.film-screen video');
+  if (!button || !player) return;
+  player.hidden = true;
+  button.hidden = false;
   button.addEventListener('click', function () {
-    const player = document.createElement('iframe');
-    player.title = 'The Paper He Kept — Richard Gilbride author film';
-    player.src = 'https://www.youtube-nocookie.com/embed/4OgIeYve98k?playsinline=1&autoplay=1';
-    player.referrerPolicy = 'strict-origin-when-cross-origin';
-    player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-    player.setAttribute('allowfullscreen', '');
-    screen.replaceChildren(player);
+    button.hidden = true;
+    player.hidden = false;
     player.focus();
+    player.play().catch(function () { /* Native controls remain available. */ });
   }, { once: true });
-
-  button.disabled = false;
 })();

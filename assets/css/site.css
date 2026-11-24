@@ -230,14 +230,13 @@ blockquote footer{font:400 14px var(--cond);color:var(--mist)}
 .film h2{font-size:clamp(44px,5vw,66px);letter-spacing:-.015em;color:#fff}
 .film-description{line-height:1.55;max-width:40ch;margin:0;text-wrap:pretty}
 .film-screen{min-width:0}
-.film-screen img,.film-screen iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;outline:1px solid var(--line);background:var(--night)}
+.film-screen img,.film-screen video{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;outline:1px solid var(--line);background:var(--night)}
+.film-screen [hidden]{display:none}
 .film-play{display:block;width:100%;padding:0;background:none;border:0;text-align:left;color:var(--pale);cursor:pointer;font:500 17px/1.3 var(--cond)}
-.film-play:disabled{cursor:default}
-.film-play:disabled .film-play-label{display:none}
 .film-play-label{display:flex;align-items:center;gap:12px;min-height:44px;margin-top:8px;padding:8px 4px}
 .film-play-label::before{content:"";border-style:solid;border-width:6px 0 6px 9px;border-color:transparent transparent transparent var(--lamp)}
-.film-play:hover:not(:disabled){color:var(--lamp)}
-.film-play:focus-visible{outline:2px solid var(--lamp);outline-offset:5px}
+.film-play:hover{color:var(--lamp)}
+.film-play:focus-visible,.film-screen video:focus-visible{outline:2px solid var(--lamp);outline-offset:5px}
 
 /* Find the book: dawn */
 .find{background:linear-gradient(180deg,#d9e1e7 0,var(--dawn) 40%,var(--dawn-2) 100%);color:var(--ink);padding:92px 0}
@@ -312,6 +311,4 @@ blockquote footer{font:400 14px var(--cond);color:var(--mist)}
   .lead{font-size:16px}
   .opening .eyebrow{font-size:11px}
   .credits tbody th{font-size:20px;padding-right:10px}
-  .film-play{font-size:16px}
-  .film-play-label{gap:8px}
 }
